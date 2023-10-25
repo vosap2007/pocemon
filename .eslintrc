@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:jest/recommended"
+  ],
+  "plugins": ["jest"],
+  "rules": {
+    "prettier/prettier": [
+      "warn",
+      {
+        "singleQuote": true
+      }
+    ]
+  },
+  "ignorePatterns": ["dist", "node_modules", "**/*.test.js"]
+}

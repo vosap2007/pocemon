@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "~*": ["./*"]
+    },
+    "declaration": true,
+    "typeRoots": ["node_modules/@types"],
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "noEmit": true,
+    "target": "es6",
+    "lib": ["ES2020", "ES2021", "DOM"],
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "downlevelIteration": true,
+    "skipLibCheck": true /* Skip type checking of declaration files. */,
+    "suppressImplicitAnyIndexErrors": true,
+  },
+  "include": ["src/", "./declaration.d.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts", "src/index.tsx"]
+}
+  
