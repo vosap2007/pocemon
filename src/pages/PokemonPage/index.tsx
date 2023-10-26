@@ -5,8 +5,8 @@ import { fetchPokemonByName } from '../../state/pokemonSlice';
 import Move from '../../components/Move';
 import Stat from '../../components/Stat';
 
-const PokemonPage = () => {
-  const { name } = useParams();
+const PokemonPage: React.FC = () => {
+  const { name } = useParams<{ name: string }>();
   const dispatch = useDispatch();
   const pokemonData = useSelector((state) => state.pocemon);
 

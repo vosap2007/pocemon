@@ -1,13 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getPocemonByName, getPocemons } from '../services/api';
+import { PokemonData } from '~pages/PokemonPage/type';
 
-interface Pocemon {
-  id: number;
-  name: string;
-}
-
-interface PocemonsState {
-  pocemons: Pocemon[];
+export interface PocemonsState {
+  pocemons: PokemonData[];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string;
   page: number;

@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchPocemons } from '../../state/pokemonSlice';
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const containerRef = useRef(null);
+  const [searchTerm, setSearchTerm] = useState('');
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const dispatch = useDispatch();
   const pocemonsAll = useSelector((state) => state.pocemons);
 
@@ -43,11 +44,21 @@ const HomePage = () => {
     };
   }, [handleScroll]);
 
+  const filteredPocemons = pocemonsAll.pocemons.filter((pocemon) =>
+    pocemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <>
       <div style={{ height: '500px', overflow: 'auto' }} ref={containerRef}>
         <h1>HomePage</h1>
-        {pocemonsAll.pocemons.map((pocemon, idx) => (
+        <input
+          type="text"
+          placeholder="Search Pocemons..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        {filteredPocemons.map((pocemon, idx) => (
           <Link key={idx} to={`/${pocemon.name}`}>
             <li>{pocemon.name}</li>
           </Link>
