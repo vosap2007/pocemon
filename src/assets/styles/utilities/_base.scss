@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: white;
+  font-weight: 400;
+  font-family: 'ProximaNova';
+}
+
+body {
+  z-index: 1;
+}
+
+input:focus {
+  color: white;
+}
+
+svg {
+  display: block;
+
+  path,
+  circle {
+    transition: 0.3s all ease-in-out;
+  }
+}

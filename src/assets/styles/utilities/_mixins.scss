@@ -1,0 +1,65 @@
+@mixin for_laptop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for_big_tablet {
+  @media screen and (max-width: 990px) {
+    @content;
+  }
+}
+
+@mixin for_tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for_phone {
+  @media screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin for_small_phone {
+  @media screen and (max-width: 385px) {
+    @content;
+  }
+}
+
+// tpl-mixins
+@mixin vertical_line {
+  height: 32px;
+  border-left: 1px solid $black_borders;
+}
+
+// style tabs for portfolio page
+@mixin mixin_active_tab {
+  color: $white;
+  background-color: $brand_yellow;
+}
+
+// header_burger span
+@mixin burger {
+  content: '';
+  position: absolute;
+  background-color: $white;
+  left: 7px;
+  width: 18px;
+  height: 2px;
+  transition: all 0.3s ease 0s;
+}
+
+// container
+@mixin container {
+  padding: 0 32px;
+
+  @include for_big_tablet {
+    padding: 0 16px;
+  }
+
+  @include for_small_phone {
+    padding: 0 8px;
+  }
+}

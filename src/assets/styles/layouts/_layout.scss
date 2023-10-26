@@ -1,0 +1,21 @@
+html,
+body {
+  height: 100%;
+  background-color: black;
+}
+
+[id='root'] {
+  height: 100%;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  min-height: 100%;
+
+  .main {
+    flex: 1 1 auto;
+    padding: 50px;
+  }
+}
