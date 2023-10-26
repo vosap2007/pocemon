@@ -1,16 +1,20 @@
 import React from 'react';
-
-import Header from './layouts/Header/index'
-import Footer from './layouts/Footer/index'
+import { Route, Routes } from 'react-router-dom';
+import Layout from './layouts/Layout';
+import HomePage from './pages/HomePage';
+import PocemonPage from './pages/PokemonPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 const App = () => {
   return (
-    <div className="layout">
-      <Header />
-      <div className="layout__content">Main Page</div>
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="/:name" element={<PocemonPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   );
-}
+};
 
 export default App;
