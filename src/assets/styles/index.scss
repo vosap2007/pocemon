@@ -1,9 +1,6 @@
 // utilities
 @import './utilities/reset';
-@import './utilities/variables';
-@import './utilities/mixins';
 @import './utilities/base';
-@import './utilities/reusable';
 
 // layout
 @import './layouts/layout';
@@ -11,8 +8,8 @@
 @import './layouts/footer';
 
 // components
-// @import './components/move';
-// @import './components/stat';
+@import './components/move';
+@import './components/stat';
 
 //pages
 @import './pages/home';

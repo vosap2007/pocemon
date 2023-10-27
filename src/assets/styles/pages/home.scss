@@ -1,5 +1,47 @@
 .home {
-  background-color: aqua;
   height: 100vh;
   overflow: auto;
+  padding: 50px;
+
+  &__top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 45px;
+
+    &__title {
+      font-size: xx-large;
+      font-weight: 600;
+      color: rgb(224, 85, 5);
+    }
+
+    &__input {
+      background-color: rgb(224, 85, 5);
+      border: 0.2rem outset white;
+      border-radius: 12px;
+      padding: 7px;
+    }
+
+    &__input::placeholder {
+      color: #ffffff;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+
+    &__pocemon {
+      font-size: large;
+      font-weight: 600;
+      color: linen;
+      transition: all 0.2s;
+
+      &:hover {
+        color: rgb(224, 85, 5);
+      }
+    }
+  }
 }

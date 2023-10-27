@@ -50,18 +50,24 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="home" ref={containerRef}>
-      <h1>HomePage</h1>
-      <input
-        type="text"
-        placeholder="Search Pocemons..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      {filteredPocemons.map((pocemon, idx) => (
-        <Link key={idx} to={`/${pocemon.name}`}>
-          <li>{pocemon.name}</li>
-        </Link>
-      ))}
+      <div className="home__top">
+        <h1 className="home__top__title">POKEMONS</h1>
+        <input
+          type="text"
+          className="home__top__input"
+          placeholder="Search Pocemons..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
+      <div className="home__list">
+        {filteredPocemons.map((pocemon, idx) => (
+          <Link key={idx} to={`/${pocemon.name}`}>
+            <li className="home__list__pocemon">{pocemon.name}</li>
+          </Link>
+        ))}
+      </div>
+
       {isLoading && <p>Loading...</p>}
     </div>
   );

@@ -23,23 +23,37 @@ const PokemonPage: React.FC = () => {
   const { name: pokemonName, id, moves, stats } = pokemonData.pokemon;
 
   return (
-    <div>
-      Go <Link to="/">home</Link>
-      <div>
-        <h1>Pokemon name: {pokemonName}</h1>
+    <div className="pokemon">
+      <div className="pokemon__back">
+        <Link to="/">
+          <span>&larr;</span> назад
+        </Link>
+      </div>
+
+      <div className="pokemon__top">
+        <h1 className="pokemon__top__title">
+          Pokemon name: <span>{pokemonName}</span>
+        </h1>
         <img
+          className="pokemon__img"
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
           alt={pokemonName}
         />
-        <h2>Moves</h2>
-        {moves.map((data) => (
-          <Move data={data} key={data.move.name} />
-        ))}
+      </div>
+      <div className="pokemon__info">
+        <div>
+          <h2 className="pokemon__info__title">Moves</h2>
+          {moves.map((data) => (
+            <Move data={data} key={data.move.name} />
+          ))}
+        </div>
 
-        <h2>Stats</h2>
-        {stats.map((data) => (
-          <Stat data={data} key={data.stat.name} />
-        ))}
+        <div>
+          <h2 className="pokemon__info__title">Stats</h2>
+          {stats.map((data) => (
+            <Stat data={data} key={data.stat.name} />
+          ))}
+        </div>
       </div>
     </div>
   );

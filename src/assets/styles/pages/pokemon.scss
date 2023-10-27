@@ -1,2 +1,45 @@
 .pokemon {
+  padding: 50px;
+
+  &__back {
+    font-size: large;
+    font-weight: 600;
+    a {
+      color: rgb(224, 85, 5);
+    }
+  }
+
+  &__img {
+    width: auto;
+    height: auto;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 45px;
+
+    &__title {
+      font-size: xx-large;
+      font-weight: 600;
+      color: rgb(224, 85, 5);
+
+      span {
+        color: linen;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+
+    &__title {
+      font-size: large;
+      color: rgb(224, 85, 5);
+      margin-bottom: 10px;
+    }
+  }
 }
